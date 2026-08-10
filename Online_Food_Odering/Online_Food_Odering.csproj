@@ -67,14 +67,176 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="register.html" />
+    <Content Include="admin\add-food.aspx" />
+    <Content Include="admin\categories.aspx" />
+    <Content Include="admin\coupons.aspx" />
+    <Content Include="admin\css\admin.css" />
+    <Content Include="admin\css\responsive.css" />
+    <Content Include="admin\customer-details.aspx" />
+    <Content Include="admin\customers.aspx" />
+    <Content Include="admin\dashboard.aspx" />
+    <Content Include="admin\delivery.aspx" />
+    <Content Include="admin\edit-food.aspx" />
+    <Content Include="admin\js\admin.js" />
+    <Content Include="admin\login.aspx" />
+    <Content Include="admin\menu.aspx" />
+    <Content Include="admin\order-details.aspx" />
+    <Content Include="admin\orders.aspx" />
+    <Content Include="admin\payments.aspx" />
+    <Content Include="admin\reports.aspx" />
+    <Content Include="admin\reviews.aspx" />
+    <Content Include="admin\settings.aspx" />
+    <Content Include="App_Data\FoodieHub.mdf" />
+    <Content Include="App_Data\FoodieHub_log.ldf">
+      <DependentUpon>FoodieHub.mdf</DependentUpon>
+    </Content>
+    <Content Include="css\style.css" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\Ragister.jpeg" />
+    <Content Include="js\app.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Ragister.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\add-food.aspx.cs">
+      <DependentUpon>add-food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\add-food.aspx.designer.cs">
+      <DependentUpon>add-food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Admin_Site2.Master.cs">
+      <DependentUpon>Admin_Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Admin_Site2.Master.designer.cs">
+      <DependentUpon>Admin_Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\categories.aspx.cs">
+      <DependentUpon>categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\categories.aspx.designer.cs">
+      <DependentUpon>categories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\coupons.aspx.cs">
+      <DependentUpon>coupons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\coupons.aspx.designer.cs">
+      <DependentUpon>coupons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\customer-details.aspx.cs">
+      <DependentUpon>customer-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\customer-details.aspx.designer.cs">
+      <DependentUpon>customer-details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\customers.aspx.cs">
+      <DependentUpon>customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\customers.aspx.designer.cs">
+      <DependentUpon>customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delivery.aspx.cs">
+      <DependentUpon>delivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delivery.aspx.designer.cs">
+      <DependentUpon>delivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\edit-food.aspx.cs">
+      <DependentUpon>edit-food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\edit-food.aspx.designer.cs">
+      <DependentUpon>edit-food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\order-details.aspx.cs">
+      <DependentUpon>order-details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\order-details.aspx.designer.cs">
+      <DependentUpon>order-details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\orders.aspx.cs">
+      <DependentUpon>orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\orders.aspx.designer.cs">
+      <DependentUpon>orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\payments.aspx.cs">
+      <DependentUpon>payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\payments.aspx.designer.cs">
+      <DependentUpon>payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\reports.aspx.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\reports.aspx.designer.cs">
+      <DependentUpon>reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\reviews.aspx.cs">
+      <DependentUpon>reviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\reviews.aspx.designer.cs">
+      <DependentUpon>reviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ragister.aspx.cs">
+      <DependentUpon>Ragister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ragister.aspx.designer.cs">
+      <DependentUpon>Ragister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -88,6 +250,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\Admin_Site2.Master" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">

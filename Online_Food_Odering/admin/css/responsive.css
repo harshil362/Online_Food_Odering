@@ -1,0 +1,43 @@
+/* ── Responsive: Tablet ── */
+@media(max-width:1200px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-6{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(max-width:992px){
+  .admin-sidebar{transform:translateX(-100%)}
+  .admin-sidebar.open{transform:translateX(0)}
+  .sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:999;display:none}
+  .sidebar-overlay.show{display:block}
+  .admin-topbar{left:0}
+  .admin-main{margin-left:0}
+  .menu-toggle{display:block}
+  .topbar-search input{width:200px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .page-header{flex-direction:column;align-items:flex-start}
+}
+
+/* ── Responsive: Mobile ── */
+@media(max-width:768px){
+  .grid-2,.grid-3,.grid-4,.grid-6{grid-template-columns:1fr}
+  .topbar-search{display:none}
+  .admin-content{padding:1rem}
+  .filter-bar{flex-direction:column;align-items:stretch}
+  .filter-bar .form-control,.filter-bar .form-select{max-width:100%}
+  .admin-pagination{flex-direction:column;text-align:center}
+  .stat-card{flex-direction:column;text-align:center}
+  .chart-container{height:220px}
+  .admin-login-page{grid-template-columns:1fr}
+  .login-visual{display:none}
+  .login-form-side{padding:1.5rem}
+  .admin-profile span{display:none}
+  .admin-table{font-size:.8rem}
+  .admin-table thead th,.admin-table tbody td{padding:.6rem .5rem}
+}
+
+@media(max-width:480px){
+  .page-header h1{font-size:1.2rem}
+  .btn-admin{padding:.4rem .85rem;font-size:.78rem}
+  .card-header-admin{padding:.85rem 1rem}
+  .card-body-admin{padding:1rem}
+}

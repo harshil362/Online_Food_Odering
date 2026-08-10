@@ -12,16 +12,389 @@
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <!DOCTYPE html>
+                <html lang="en">
 
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <title>FoodieHub | Online Food Ordering</title>
+                    <link rel="icon" type="image/png" href="images/favicon.png" />
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+                        rel="stylesheet" />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+                    <link rel="stylesheet" href="css/style.css" />
+                </head>
+
+                <body>
+                    <!-- HEADER START -->
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+                        <div class="container">
+                            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80"
+                                    alt="FoodieHub logo" class="brand-logo" />
+                                <div class="brand-text">
+                                    <span class="brand-name">FoodieHub</span>
+                                    <span class="brand-tagline">Fresh meals, fast delivery</span>
+                                </div>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-between" id="navbarMenu">
+                                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+                                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                </ul>
+                                <div class="d-flex align-items-center gap-3">
+                                    <form class="d-flex" role="search" id="homeSearchForm" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if(q) window.location.href = 'menu.html?search=' + encodeURIComponent(q);">
+                                        <input class="form-control rounded-pill" type="search" placeholder="Search food" />
+                                    </form>
+                                    <a class="nav-link position-relative" href="cart.html">
+                                        <i class="fa-solid fa-shopping-cart fa-lg"></i>
+                                        <span class="cart-badge">0</span>
+                                    </a>
+                                    <div id="authAction"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
             </asp:ContentPlaceHolder>
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
 
-          
+                <main class="container py-5">
+                    <section class="hero-section row align-items-center g-4">
+                        <div class="col-lg-7">
+                            <span class="badge badge-soft rounded-pill mb-3 px-3 py-2">Fast Delivery • Fresh Taste</span>
+                            <h1 class="hero-title">Delicious food delivered to your doorstep.</h1>
+                            <p class="hero-text mt-3">
+                                Order your favorite pizza, burgers, biryani and desserts in minutes with a smooth
+          experience built for quick cravings.
+                            </p>
+                            <div class="d-flex gap-3 flex-wrap mt-4">
+                                <a href="menu.html" class="btn btn-orange">Order Now</a>
+                                <a href="about.html" class="btn btn-outline-orange">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <img class="hero-image"
+                                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80"
+                                alt="Food" />
+                        </div>
+                    </section>
+
+                    <section class="py-4">
+                        <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
+                            <div class="col">
+                                <div class="info-card p-4 text-center h-100">
+                                    <i class="fa-solid fa-bolt fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Fast Delivery</h5>
+                                    <p class="text-muted small">Hot meals delivered to your door in under 30 minutes.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="info-card p-4 text-center h-100">
+                                    <i class="fa-solid fa-leaf fa-2x text-success"></i>
+                                    <h5 class="mt-3">Fresh Ingredients</h5>
+                                    <p class="text-muted small">Daily fresh produce and kitchen-made meals every order.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="info-card p-4 text-center h-100">
+                                    <i class="fa-solid fa-wallet fa-2x text-primary"></i>
+                                    <h5 class="mt-3">Easy Payments</h5>
+                                    <p class="text-muted small">Secure checkout with cards, wallets, and cash on delivery.</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="info-card p-4 text-center h-100">
+                                    <i class="fa-solid fa-headset fa-2x text-info"></i>
+                                    <h5 class="mt-3">24/7 Support</h5>
+                                    <p class="text-muted small">Friendly help for every order, anytime you need it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Popular Categories</h2>
+                                <p class="section-subtitle">Pick from a variety of delicious options.</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="feature-card card p-4 text-center">
+                                    <i class="fa-solid fa-pizza-slice fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Pizza</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="feature-card card p-4 text-center">
+                                    <i class="fa-solid fa-burger fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Burger</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="feature-card card p-4 text-center">
+                                    <i class="fa-solid fa-mug-hot fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Biryani</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="feature-card card p-4 text-center">
+                                    <i class="fa-solid fa-bowl-food fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Chinese</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="feature-card card p-4 text-center">
+                                    <i class="fa-solid fa-sandwich fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Sandwich</h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="feature-card card p-4 text-center">
+                                    <i
+                                        class="fa-solid fa-martini-glass-citrus fa-2x text-warning"></i>
+                                    <h5 class="mt-3">Drinks</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-3">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Today's Special Offers</h2>
+                                <p class="section-subtitle">Limited-time combos and irresistible discounts.</p>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card feature-card p-4">
+                                    <h5 class="fw-bold">Pizza + Drink Combo</h5>
+                                    <p class="text-muted mb-0">Save 15% on your favorite pizza and beverage pairing.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card feature-card p-4">
+                                    <h5 class="fw-bold">Burger Feast</h5>
+                                    <p class="text-muted mb-0">Double burger, fries, and drink at a special price.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card feature-card p-4">
+                                    <h5 class="fw-bold">Dessert Delight</h5>
+                                    <p class="text-muted mb-0">Enjoy a sweet treat with every order above $20.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-3">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h2 class="section-title">Popular Foods</h2>
+                                <p class="section-subtitle">Most-loved dishes by food lovers.</p>
+                            </div>
+                            <a href="menu.html" class="btn btn-outline-orange">View All</a>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card food-card h-100">
+                                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80"
+                                        class="card-img-top" alt="pizza" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pepperoni Pizza</h5>
+                                        <p class="card-text text-muted small">Cheesy, spicy, and packed with flavor.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price-pill">$12.99</span>
+                                            <a href="food-details.html?id=1" class="btn btn-orange btn-sm">Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card food-card h-100">
+                                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+                                        class="card-img-top" alt="burger" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Smoky Burger</h5>
+                                        <p class="card-text text-muted small">Juicy burger with smoky flavor and crispy bites.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price-pill">$8.49</span>
+                                            <a href="food-details.html?id=2" class="btn btn-orange btn-sm">Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card food-card h-100">
+                                    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80"
+                                        class="card-img-top" alt="biryani" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hyderabadi Biryani</h5>
+                                        <p class="card-text text-muted small">Aromatic rice dish to satisfy every craving.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="price-pill">$10.99</span>
+                                            <a href="food-details.html?id=3" class="btn btn-orange btn-sm">Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-5">
+                        <div class="card cta-card p-4 text-center">
+                            <div class="row align-items-center g-3">
+                                <div class="col-lg-8 mx-auto">
+                                    <h2 class="section-title">Craving something delicious?</h2>
+                                    <p class="section-subtitle mb-4">
+                                        Browse our menu, choose your favorites, and get them delivered fresh right
+              away.
+                                    </p>
+                                    <a href="menu.html" class="btn btn-orange btn-lg">Browse the Menu</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="py-5">
+                        <div class="text-center mb-4">
+                            <h2 class="section-title">What Our Customers Say</h2>
+                            <p class="section-subtitle">Trusted by thousands for fast service and tasty food.</p>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card testimonial-card p-4">
+                                    <p>“The delivery was super fast and the quality was amazing. I loved the burger!”</p>
+                                    <div class="fw-semibold">Ava</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card testimonial-card p-4">
+                                    <p>“The menu is easy to browse and the checkout experience is really smooth.”</p>
+                                    <div class="fw-semibold">John</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card testimonial-card p-4">
+                                    <p>“Best online food service I’ve used this month. Great variety and flavors.”</p>
+                                    <div class="fw-semibold">Mina</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                </main>
             </asp:ContentPlaceHolder>
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
 
+                <footer class="footer">
+                    <div class="container footer-main">
+                        <div class="row g-4 g-lg-5">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80" alt="FoodieHub" class="footer-brand-logo" />
+                                    <span class="footer-brand-name">FoodieHub</span>
+                                </div>
+                                <p class="footer-brand-desc">Delivering happiness one meal at a time. Fresh ingredients, handcrafted recipes, and lightning-fast delivery to your doorstep.</p>
+                                <div class="footer-social">
+                                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-6">
+                                <h5>Quick Links</h5>
+                                <div class="footer-links">
+                                    <a href="index.html">Home</a>
+                                    <a href="menu.html">Our Menu</a>
+                                    <a href="about.html">About Us</a>
+                                    <a href="contact.html">Contact</a>
+                                    <a href="cart.html">My Cart</a>
+                                    <a href="account.html">My Account</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-6">
+                                <h5>Contact Us</h5>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                                    <div class="footer-contact-text">
+                                        <span>Address</span>123 Food Street, New York, NY 10001
+                                    </div>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-icon"><i class="fa-solid fa-phone"></i></span>
+                                    <div class="footer-contact-text">
+                                        <span>Phone</span>+1 234 567 890
+                                    </div>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                                    <div class="footer-contact-text">
+                                        <span>Email</span>support@foodiehub.com
+                                    </div>
+                                </div>
+                                <div class="footer-contact-item">
+                                    <span class="footer-contact-icon"><i class="fa-solid fa-clock"></i></span>
+                                    <div class="footer-contact-text">
+                                        <span>Hours</span>Daily 8:00 AM – 11:00 PM
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <h5>Newsletter</h5>
+                                <div class="footer-newsletter">
+                                    <p>Subscribe for new menu items, exclusive offers, and seasonal specials.</p>
+                                    <form class="d-flex flex-column gap-2" onsubmit="event.preventDefault(); showToast('Thanks for subscribing!');">
+                                        <input type="email" class="form-control" placeholder="Your email address" required />
+                                        <button class="btn btn-orange w-100" type="submit"><i class="fa-solid fa-paper-plane me-2"></i>Subscribe</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="footer-divider" />
+                    <div class="footer-bottom">
+                        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+                            <p class="mb-0">© 2026 FoodieHub. All rights reserved.</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms of Service</a>
+                            </div>
+                            <div class="footer-payment-methods">
+                                <i class="fa-brands fa-cc-visa"></i>
+                                <i class="fa-brands fa-cc-mastercard"></i>
+                                <i class="fa-brands fa-cc-paypal"></i>
+                                <i class="fa-brands fa-cc-apple-pay"></i>
+                                <i class="fa-brands fa-google-pay"></i>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- FOOTER END -->
+                <div id="toastMessage" class="toast align-items-center text-bg-dark border-0 position-fixed bottom-0 end-0 m-3"
+                    role="status">
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="js/app.js"></script>
+</body>
+
+</html>
 </asp:ContentPlaceHolder>
 
         </div>
