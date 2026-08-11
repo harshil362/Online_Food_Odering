@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Online_Food_Odering.Site1" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Online_Food_Odering.Site1" %>
 
 <!DOCTYPE html>
 
@@ -32,7 +32,7 @@
 
                     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
                         <div class="container">
-                            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                            <a class="navbar-brand d-flex align-items-center gap-2" href="index.aspx">
                                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80"
                                     alt="FoodieHub logo" class="brand-logo" />
                                 <div class="brand-text">
@@ -46,16 +46,16 @@
                             </button>
                             <div class="collapse navbar-collapse justify-content-between" id="navbarMenu">
                                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-                                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="index.aspx">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="menu.aspx">Menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="about.aspx">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contact.aspx">Contact</a></li>
                                 </ul>
                                 <div class="d-flex align-items-center gap-3">
-                                    <form class="d-flex" role="search" id="homeSearchForm" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if(q) window.location.href = 'menu.html?search=' + encodeURIComponent(q);">
+                                    <form class="d-flex" role="search" id="homeSearchForm" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if(q) window.location.href = 'admin/menu.aspx?search=' + encodeURIComponent(q);">
                                         <input class="form-control rounded-pill" type="search" placeholder="Search food" />
                                     </form>
-                                    <a class="nav-link position-relative" href="cart.html">
+                                    <a class="nav-link position-relative" href="cart.aspx">
                                         <i class="fa-solid fa-shopping-cart fa-lg"></i>
                                         <span class="cart-badge">0</span>
                                     </a>
@@ -78,8 +78,8 @@
           experience built for quick cravings.
                             </p>
                             <div class="d-flex gap-3 flex-wrap mt-4">
-                                <a href="menu.html" class="btn btn-orange">Order Now</a>
-                                <a href="about.html" class="btn btn-outline-orange">Learn More</a>
+                                <a href="admin/menu.aspx" class="btn btn-orange">Order Now</a>
+                                <a href="about.aspx" class="btn btn-outline-orange">Learn More</a>
                             </div>
                         </div>
                         <div class="col-lg-5">
@@ -205,7 +205,7 @@
                                 <h2 class="section-title">Popular Foods</h2>
                                 <p class="section-subtitle">Most-loved dishes by food lovers.</p>
                             </div>
-                            <a href="menu.html" class="btn btn-outline-orange">View All</a>
+                            <a href="admin/menu.aspx" class="btn btn-outline-orange">View All</a>
                         </div>
                         <div class="row g-4">
                             <div class="col-md-6 col-lg-4">
@@ -217,7 +217,7 @@
                                         <p class="card-text text-muted small">Cheesy, spicy, and packed with flavor.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="price-pill">$12.99</span>
-                                            <a href="food-details.html?id=1" class="btn btn-orange btn-sm">Order</a>
+                                            <a href="admin/food-details.aspx?id=1" class="btn btn-orange btn-sm">Order</a>
                                         </div>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@
                                         <p class="card-text text-muted small">Juicy burger with smoky flavor and crispy bites.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="price-pill">$8.49</span>
-                                            <a href="food-details.html?id=2" class="btn btn-orange btn-sm">Order</a>
+                                            <a href="admin/food-details.aspx?id=2" class="btn btn-orange btn-sm">Order</a>
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@
                                         <p class="card-text text-muted small">Aromatic rice dish to satisfy every craving.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="price-pill">$10.99</span>
-                                            <a href="food-details.html?id=3" class="btn btn-orange btn-sm">Order</a>
+                                            <a href="admin/food-details.aspx?id=3" class="btn btn-orange btn-sm">Order</a>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@
                                         Browse our menu, choose your favorites, and get them delivered fresh right
               away.
                                     </p>
-                                    <a href="menu.html" class="btn btn-orange btn-lg">Browse the Menu</a>
+                                    <a href="admin/menu.aspx" class="btn btn-orange btn-lg">Browse the Menu</a>
                                 </div>
                             </div>
                         </div>
@@ -320,12 +320,12 @@
                             <div class="col-lg-2 col-md-6 col-6">
                                 <h5>Quick Links</h5>
                                 <div class="footer-links">
-                                    <a href="index.html">Home</a>
-                                    <a href="menu.html">Our Menu</a>
-                                    <a href="about.html">About Us</a>
-                                    <a href="contact.html">Contact</a>
-                                    <a href="cart.html">My Cart</a>
-                                    <a href="account.html">My Account</a>
+                                    <a href="index.aspx">Home</a>
+                                    <a href="admin/menu.aspx">Our Menu</a>
+                                    <a href="about.aspx">About Us</a>
+                                    <a href="contact.aspx">Contact</a>
+                                    <a href="cart.aspx">My Cart</a>
+                                    <a href="account.aspx">My Account</a>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-6">

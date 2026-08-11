@@ -22,17 +22,17 @@
                 <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80" alt="FoodieHub"><span>FoodieHub</span></div>
             <nav class="sidebar-nav">
                 <div class="nav-label">Main</div>
-                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
+                <a href="dashboard.aspx" class="nav-item"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
                 <div class="nav-label">Management</div>
-                <a href="orders.html" class="nav-item"><i class="fa-solid fa-bag-shopping"></i>Orders</a><a href="menu.html" class="nav-item"><i class="fa-solid fa-utensils"></i>Menu</a><a href="categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i>Categories</a>
+                <a href="orders.aspx" class="nav-item"><i class="fa-solid fa-bag-shopping"></i>Orders</a><a href="menu.aspx" class="nav-item"><i class="fa-solid fa-utensils"></i>Menu</a><a href="categories.aspx" class="nav-item"><i class="fa-solid fa-layer-group"></i>Categories</a>
                 <div class="nav-label">Users</div>
-                <a href="customers.html" class="nav-item active"><i class="fa-solid fa-users"></i>Customers</a>
+                <a href="customers.aspx" class="nav-item active"><i class="fa-solid fa-users"></i>Customers</a>
                 <div class="nav-label">Business</div>
-                <a href="coupons.html" class="nav-item"><i class="fa-solid fa-ticket"></i>Coupons</a><a href="payments.html" class="nav-item"><i class="fa-solid fa-credit-card"></i>Payments</a><a href="delivery.html" class="nav-item"><i class="fa-solid fa-truck"></i>Delivery</a>
+                <a href="coupons.aspx" class="nav-item"><i class="fa-solid fa-ticket"></i>Coupons</a><a href="payments.aspx" class="nav-item"><i class="fa-solid fa-credit-card"></i>Payments</a><a href="delivery.aspx" class="nav-item"><i class="fa-solid fa-truck"></i>Delivery</a>
                 <div class="nav-label">Insights</div>
-                <a href="reviews.html" class="nav-item"><i class="fa-solid fa-star"></i>Reviews</a><a href="reports.html" class="nav-item"><i class="fa-solid fa-chart-line"></i>Reports</a>
+                <a href="reviews.aspx" class="nav-item"><i class="fa-solid fa-star"></i>Reviews</a><a href="reports.aspx" class="nav-item"><i class="fa-solid fa-chart-line"></i>Reports</a>
                 <div class="nav-label">System</div>
-                <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i>Settings</a>
+                <a href="settings.aspx" class="nav-item"><i class="fa-solid fa-gear"></i>Settings</a>
             </nav>
             <div class="sidebar-footer"><a href="#" onclick="adminLogout()" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></div>
         </aside>
@@ -51,7 +51,7 @@
                 <div style="position: relative">
                     <div class="admin-profile" onclick="toggleProfileDropdown()">
                         <img src="https://i.pravatar.cc/40?img=68" alt="Admin"><span>Admin</span><i class="fa-solid fa-chevron-down" style="font-size: .65rem; color: #6c757d"></i></div>
-                    <div class="profile-dropdown"><a href="settings.html"><i class="fa-solid fa-user"></i>My Profile</a><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a><div class="divider"></div>
+                    <div class="profile-dropdown"><a href="settings.aspx"><i class="fa-solid fa-user"></i>My Profile</a><a href="settings.aspx"><i class="fa-solid fa-gear"></i>Settings</a><div class="divider"></div>
                         <button onclick="adminLogout()" class="text-danger"><i class="fa-solid fa-right-from-bracket"></i>Logout</button></div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="page-header">
                 <div>
                     <h1>Customer Details</h1>
-                    <div class="breadcrumb-nav"><a href="dashboard.html">Dashboard</a> / <a href="customers.html">Customers</a> / Ava Johnson</div>
+                    <div class="breadcrumb-nav"><a href="dashboard.aspx">Dashboard</a> / <a href="customers.aspx">Customers</a> / Ava Johnson</div>
                 </div>
                 <button class="btn-admin btn-admin-danger" onclick="showModal('Block Customer','Block Ava Johnson?',()=>showAdminToast('Customer blocked','error'))"><i class="fa-solid fa-ban"></i>Block Customer</button>
             </div>
@@ -139,7 +139,7 @@
                     <div class="admin-card">
                         <div class="card-header-admin">
                             <h3>Order History</h3>
-                            <a href="orders.html" class="btn-admin btn-admin-outline btn-admin-sm">View All</a></div>
+                            <a href="orders.aspx" class="btn-admin btn-admin-outline btn-admin-sm">View All</a></div>
                         <div class="table-responsive-admin">
                             <table class="admin-table">
                                 <thead>
@@ -159,7 +159,7 @@
                                         <td class="fw-600">₹649</td>
                                         <td><span class="badge-admin badge-delivered">Delivered</span></td>
                                         <td class="fs-sm">Aug 8, 2026</td>
-                                        <td><a href="order-details.html" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
+                                        <td><a href="order-details.aspx" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td class="fw-600">#FH0987</td>
@@ -167,7 +167,7 @@
                                         <td class="fw-600">₹249</td>
                                         <td><span class="badge-admin badge-delivered">Delivered</span></td>
                                         <td class="fs-sm">Aug 3, 2026</td>
-                                        <td><a href="order-details.html" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
+                                        <td><a href="order-details.aspx" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td class="fw-600">#FH0945</td>
@@ -175,7 +175,7 @@
                                         <td class="fw-600">₹499</td>
                                         <td><span class="badge-admin badge-delivered">Delivered</span></td>
                                         <td class="fs-sm">Jul 28, 2026</td>
-                                        <td><a href="order-details.html" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
+                                        <td><a href="order-details.aspx" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td class="fw-600">#FH0901</td>
@@ -183,7 +183,7 @@
                                         <td class="fw-600">₹477</td>
                                         <td><span class="badge-admin badge-cancelled">Cancelled</span></td>
                                         <td class="fs-sm">Jul 20, 2026</td>
-                                        <td><a href="order-details.html" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
+                                        <td><a href="order-details.aspx" class="btn-admin btn-admin-outline btn-admin-sm"><i class="fa-solid fa-eye"></i></a></td>
                                     </tr>
                                 </tbody>
                             </table>

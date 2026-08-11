@@ -23,17 +23,17 @@
             </div>
             <nav class="sidebar-nav">
                 <div class="nav-label">Main</div>
-                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
+                <a href="dashboard.aspx" class="nav-item"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
                 <div class="nav-label">Management</div>
-                <a href="orders.html" class="nav-item"><i class="fa-solid fa-bag-shopping"></i>Orders</a><a href="menu.html" class="nav-item"><i class="fa-solid fa-utensils"></i>Menu</a><a href="categories.html" class="nav-item"><i class="fa-solid fa-layer-group"></i>Categories</a>
+                <a href="orders.aspx" class="nav-item"><i class="fa-solid fa-bag-shopping"></i>Orders</a><a href="menu.aspx" class="nav-item"><i class="fa-solid fa-utensils"></i>Menu</a><a href="categories.aspx" class="nav-item"><i class="fa-solid fa-layer-group"></i>Categories</a>
                 <div class="nav-label">Users</div>
-                <a href="customers.html" class="nav-item"><i class="fa-solid fa-users"></i>Customers</a>
+                <a href="customers.aspx" class="nav-item"><i class="fa-solid fa-users"></i>Customers</a>
                 <div class="nav-label">Business</div>
-                <a href="coupons.html" class="nav-item active"><i class="fa-solid fa-ticket"></i>Coupons</a><a href="payments.html" class="nav-item"><i class="fa-solid fa-credit-card"></i>Payments</a><a href="delivery.html" class="nav-item"><i class="fa-solid fa-truck"></i>Delivery</a>
+                <a href="coupons.aspx" class="nav-item active"><i class="fa-solid fa-ticket"></i>Coupons</a><a href="payments.aspx" class="nav-item"><i class="fa-solid fa-credit-card"></i>Payments</a><a href="delivery.aspx" class="nav-item"><i class="fa-solid fa-truck"></i>Delivery</a>
                 <div class="nav-label">Insights</div>
-                <a href="reviews.html" class="nav-item"><i class="fa-solid fa-star"></i>Reviews</a><a href="reports.html" class="nav-item"><i class="fa-solid fa-chart-line"></i>Reports</a>
+                <a href="reviews.aspx" class="nav-item"><i class="fa-solid fa-star"></i>Reviews</a><a href="reports.aspx" class="nav-item"><i class="fa-solid fa-chart-line"></i>Reports</a>
                 <div class="nav-label">System</div>
-                <a href="settings.html" class="nav-item"><i class="fa-solid fa-gear"></i>Settings</a>
+                <a href="settings.aspx" class="nav-item"><i class="fa-solid fa-gear"></i>Settings</a>
             </nav>
             <div class="sidebar-footer"><a href="#" onclick="adminLogout()" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></div>
         </aside>
@@ -56,7 +56,7 @@
                         <img src="https://i.pravatar.cc/40?img=68" alt="Admin"><span>Admin</span><i class="fa-solid fa-chevron-down" style="font-size: .65rem; color: #6c757d"></i>
                     </div>
                     <div class="profile-dropdown">
-                        <a href="settings.html"><i class="fa-solid fa-user"></i>My Profile</a><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a><div class="divider"></div>
+                        <a href="settings.aspx"><i class="fa-solid fa-user"></i>My Profile</a><a href="settings.aspx"><i class="fa-solid fa-gear"></i>Settings</a><div class="divider"></div>
                         <button onclick="adminLogout()" class="text-danger"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
             <div class="page-header">
                 <div>
                     <h1>Coupons</h1>
-                    <div class="breadcrumb-nav"><a href="dashboard.html">Dashboard</a> / Coupons</div>
+                    <div class="breadcrumb-nav"><a href="dashboard.aspx">Dashboard</a> / Coupons</div>
                 </div>
                 <button class="btn-admin btn-admin-primary" onclick="showAdminToast('Add coupon modal would open')"><i class="fa-solid fa-plus"></i>Add Coupon</button>
             </div>

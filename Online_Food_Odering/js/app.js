@@ -191,7 +191,7 @@ function renderMenu() {
           <div class="d-flex justify-content-between align-items-center mt-auto">
             <span class="price-pill">$${item.price.toFixed(2)}</span>
             <div class="d-flex gap-2">
-              <a href="food-details.html?id=${item.id}" class="btn btn-outline-orange btn-sm">View</a>
+              <a href="admin/food-details.aspx?id=${item.id}" class="btn btn-outline-orange btn-sm">View</a>
               <button class="btn btn-orange btn-sm" onclick="addToCart(${item.id})">Add</button>
             </div>
           </div>
@@ -214,7 +214,7 @@ function renderCart() {
           <div class="empty-cart-message">
             <p class="h5 mb-3">Your cart is empty</p>
             <p class="text-muted mb-3">Browse the menu and add something delicious to your order.</p>
-            <a href="menu.html" class="btn btn-orange">Browse menu</a>
+            <a href="admin/menu.aspx" class="btn btn-orange">Browse menu</a>
           </div>
         </td>
       </tr>
@@ -358,7 +358,7 @@ function setCurrentUser(user) {
 
 function logoutUser() {
   localStorage.removeItem('foodieHubUser');
-  window.location.href = 'login.html';
+  window.location.href = 'login.aspx';
 }
 
 function renderAuthHeader() {
@@ -367,7 +367,7 @@ function renderAuthHeader() {
 
   const user = getCurrentUser();
   if (!user) {
-    authAction.innerHTML = `<a class="btn btn-outline-orange" href="login.html">Login</a>`;
+    authAction.innerHTML = `<a class="btn btn-outline-orange" href="login.aspx">Login</a>`;
     return;
   }
 
@@ -377,8 +377,8 @@ function renderAuthHeader() {
         ${user.name || 'Profile'}
       </button>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileMenuButton">
-        <li><a class="dropdown-item" href="account.html">Profile</a></li>
-        <li><a class="dropdown-item" href="cart.html">My Cart</a></li>
+        <li><a class="dropdown-item" href="account.aspx">Profile</a></li>
+        <li><a class="dropdown-item" href="cart.aspx">My Cart</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><button class="dropdown-item text-danger" type="button" id="logoutButton">Logout</button></li>
       </ul>
@@ -473,7 +473,7 @@ function setupLoginForm() {
     });
     showToast('Login successful! Redirecting...');
     setTimeout(() => {
-      window.location.href = 'account.html';
+      window.location.href = 'account.aspx';
     }, 1100);
   });
 }
@@ -528,7 +528,7 @@ function setupRegisterForm() {
     saveUsers(users);
     showToast('Registration successful! Redirecting to login...');
     setTimeout(() => {
-      window.location.href = 'login.html';
+      window.location.href = 'login.aspx';
     }, 1100);
   });
 }
@@ -540,7 +540,7 @@ function renderAccountPage() {
   if (!accountNameHeading || !accountNameProfile) return;
 
   if (!user) {
-    window.location.href = 'login.html';
+    window.location.href = 'login.aspx';
     return;
   }
 
@@ -591,14 +591,14 @@ function renderAccountPage() {
           </div>
           <div class="d-flex justify-content-between text-muted mb-1"><span>Payment</span><span>${lastOrder.paymentMethod}</span></div>
           <div class="d-flex justify-content-between text-muted mb-3"><span>Total</span><span>$${lastOrder.total}</span></div>
-          <a href="order-success.html" class="text-orange small">View receipt</a>
+          <a href="order-success.aspx" class="text-orange small">View receipt</a>
         </div>
       `;
     } else {
       ordersEl.innerHTML = `
         <div class="empty-order-card p-4 rounded-3 text-center">
           <p class="mb-2">No recent orders yet.</p>
-          <a href="menu.html" class="btn btn-outline-orange btn-sm">Start ordering</a>
+          <a href="admin/menu.aspx" class="btn btn-outline-orange btn-sm">Start ordering</a>
         </div>
       `;
     }
@@ -733,7 +733,7 @@ function setupCheckoutFlow() {
     renderCart();
     form.reset();
     refreshCheckoutSummary();
-    window.location.href = 'order-success.html';
+    window.location.href = 'order-success.aspx';
   });
 
   document.querySelectorAll('.payment-option').forEach((option) => {
@@ -754,7 +754,7 @@ function showOrderSuccess() {
   const order = JSON.parse(localStorage.getItem('lastOrder') || 'null');
   if (!order) {
     container.innerHTML = `
-      <div class="alert alert-warning">No recent order was found. <a href="index.html" class="alert-link">Return home</a>.</div>
+      <div class="alert alert-warning">No recent order was found. <a href="index.aspx" class="alert-link">Return home</a>.</div>
     `;
     return;
   }

@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -53,27 +52,42 @@ namespace Online_Food_Odering
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            getcon();
-            cmd = new SqlCommand("insert into Users_tbl(FullName,Email,Phone,Password)values('" + fullName.Text + "','" + email.Text + "','" + phone.Text + "','" + password.Text + "')", con);
-            cmd.ExecuteNonQuery();
-            fillgrid();
-            clear();
-
-
-            Response.Redirect("login.aspx");
+      
         }
 
         protected void registerBtn_Click(object sender, ImageClickEventArgs e)
         {
+            string gender;
+
+            if (rbMale.Checked)
+            {
+                gender = "Male";
+            }
+            else if (rbFemale.Checked)
+            {
+                gender = "Female";
+            }
+            else
+            {
+                gender = "";
+            }
+
+            string role = ddlRole.SelectedValue;
+
 
             getcon();
-            cmd = new SqlCommand("insert into Users_tbl(FullName,Email,Phone,Password)values('" + fullName.Text + "','" + email.Text + "','" + phone.Text + "','" + password.Text + "')", con);
+            cmd = new SqlCommand("insert into Users_tbl(FullName,Email,Phone,Password,Gender,Role)values('" + fullName.Text + "','" + email.Text + "','" + phone.Text + "','" + password.Text + "','"+ gender + "', '"+role+"' )", con);
             cmd.ExecuteNonQuery();
             fillgrid();
             clear();
 
 
-            Response.Redirect("login.aspx");
+            Response.Redirect("Ragister.aspx");
+        }
+
+        protected void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

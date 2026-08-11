@@ -60,11 +60,11 @@ function handleAdminLogin(e){
   if(!email||!pass){showAdminToast('Please fill all fields','error');return;}
   sessionStorage.setItem('adminLoggedIn','true');
   showAdminToast('Login successful! Redirecting...');
-  setTimeout(()=>window.location.href='dashboard.html',1200);
+  setTimeout(()=>window.location.href='dashboard.aspx',1200);
 }
 
 /* ── Demo Logout ── */
-function adminLogout(){sessionStorage.removeItem('adminLoggedIn');showAdminToast('Logging out...');setTimeout(()=>window.location.href='login.html',800);}
+function adminLogout(){sessionStorage.removeItem('adminLoggedIn');showAdminToast('Logging out...');setTimeout(()=>window.location.href='login.aspx',800);}
 
 /* ── Chart Drawing (Canvas) ── */
 function drawBarChart(canvasId,labels,data,color='#ff5a1f'){

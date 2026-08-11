@@ -74,7 +74,7 @@
                                     CssClass="form-control form-control-custom"
                                     placeholder="you@example.com"
                                     required="required">
-                                    </asp:TextBox>
+                                </asp:TextBox>
 
                                 <div class="validation-error" id="registerEmailError">
                                     Please enter a valid email.
@@ -99,7 +99,7 @@
                                     CssClass="form-control form-control-custom"
                                     placeholder="(123) 456-7890"
                                     required="required">
-                                 </asp:TextBox>
+                                </asp:TextBox>
 
                                 <div class="validation-error" id="registerPhoneError">
                                     Mobile number is required.
@@ -151,83 +151,137 @@
                             </div>
                             <div class="form-text text-muted mt-2">Passwords must be at least 8 characters long.</div>
 
+                            <div class="col-md-6">
+                                <label class="form-label-custom">Gender</label>
+
+                                <div class="mt-2">
+                                    <asp:RadioButton
+                                        ID="rbMale"
+                                        runat="server"
+                                        GroupName="Gender"
+                                        Text=" Male"
+                                        CssClass="me-3" />
+
+                                    <asp:RadioButton
+                                        ID="rbFemale"
+                                        runat="server"
+                                        GroupName="Gender"
+                                        Text=" Female" OnCheckedChanged="rbFemale_CheckedChanged" />
+                                </div>
+                            </div>
+
+                            <!-- Role -->
+                            <div class="col-md-6">
+                                <label class="form-label-custom">Role</label>
+
+                                <asp:DropDownList
+                                    ID="ddlRole"
+                                    runat="server"
+                                    CssClass="form-control form-control-custom">
+
+                                    <asp:ListItem Text="Select Role" Value="" />
+                                    <asp:ListItem Text="Customer" Value="Customer" />
+                                    <asp:ListItem Text="Admin" Value="Admin" />
+
+                                </asp:DropDownList>
+                            </div>  
+
                             <%--  <button class="btn btn-orange w-100 mt-4" type="submit">Register</button>--%>
                             <%--                        <asp:ImageButton ID="ImageButton1" runat="server" />--%>
-                           <%-- <asp:Button
+                            <%-- <asp:Button
                                 ID="btnRegister"
                                 runat="server"
                                 Text="Register"
                                 CssClass="btn btn-orange w-100 mt-4"
                                 OnClick="btnRegister_Click" />--%>
-                            
-<%--                            <asp:ImageButton ID="registerBtn" runat="server" ClientIDMode="Static" ImageUrl="images/Ragister.jpeg" CssClass="w-100" Style="height: 35px; border-radius: 99px;" OnClick="registerBtn_Click" />--%>
+
+                            <%--                            <asp:ImageButton ID="registerBtn" runat="server" ClientIDMode="Static" ImageUrl="images/Ragister.jpeg" CssClass="w-100" Style="height: 35px; border-radius: 99px;" OnClick="registerBtn_Click" />--%>
                             <asp:ImageButton
-    ID="registerBtn"
-    runat="server"
-    ClientIDMode="Static"
-    ImageUrl="images/Ragister.jpeg"
-    CssClass="w-100"
-    Style="height: 35px; border-radius: 99px;"
-    OnClick="registerBtn_Click" />
+                                ID="registerBtn"
+                                runat="server"
+                                ClientIDMode="Static"
+                                ImageUrl="images/Ragister.jpeg"
+                                CssClass="w-100"
+                                Style="height: 35px; border-radius: 99px;"
+                                OnClick="registerBtn_Click" />
 
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="313px">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Id">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Full Name">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("FullName") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Email">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Mobail Number">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Password">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Password") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Gender">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("Gender") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Role">
+                                        <ItemTemplate>
+                                            <asp:Label ID="Label7" runat="server" Text='<%# Eval("Role") %>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Edit">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("Id") %>'>Edit</asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Delete">
+                                        <ItemTemplate>
+                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandArgument='<%# Eval("Id") %>'>Delete</asp:LinkButton>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+
+                        </div>
+                        <p class="mt-3 text-center">Already have an account? <a href="Login.aspx" class="text-orange">Login</a></p>
                     </div>
-                    <p class="mt-3 text-center">Already have an account? <a href="login.html" class="text-orange">Login</a></p>
+                </div>
+
+                <div class="col-lg-4 order-lg-1">
+                    <div class="auth-aside p-4">
+                        <div class="mb-4">
+                            <span class="badge bg-warning text-dark rounded-pill px-3 py-2">Start ordering faster</span>
+                        </div>
+                        <h3 class="mb-3">Personalized dining starts here</h3>
+                        <p class="text-muted">Create an account to save your delivery preferences, access deals, and check out in just a few clicks.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>Exclusive member rewards</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>Saved addresses and payment details</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>One-tap reorder</li>
+                        </ul>
+                        <div class="mt-4 text-muted small">
+                            By creating an account, you agree to our <a href="#" class="text-orange">Terms of Service</a> and <a href="#" class="text-orange">Privacy Policy</a>.
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
-                <Columns>
-                    <asp:TemplateField HeaderText="Id">
-                        <ItemTemplate>
-                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Full Name">
-                        <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("FullName") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Email">
-                        <ItemTemplate>
-                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Mobail Number">
-                        <ItemTemplate>
-                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Password">
-                        <ItemTemplate>
-                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Password") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField></asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-
-            <div class="col-lg-4 order-lg-1">
-                <div class="auth-aside p-4">
-                    <div class="mb-4">
-                        <span class="badge bg-warning text-dark rounded-pill px-3 py-2">Start ordering faster</span>
-                    </div>
-                    <h3 class="mb-3">Personalized dining starts here</h3>
-                    <p class="text-muted">Create an account to save your delivery preferences, access deals, and check out in just a few clicks.</p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>Exclusive member rewards</li>
-                        <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>Saved addresses and payment details</li>
-                        <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>One-tap reorder</li>
-                    </ul>
-                    <div class="mt-4 text-muted small">
-                        By creating an account, you agree to our <a href="#" class="text-orange">Terms of Service</a> and <a href="#" class="text-orange">Privacy Policy</a>.
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- MAIN CONTENT END -->
-</div>
+    </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
 
@@ -250,12 +304,12 @@
                 <div class="col-lg-2 col-md-6 col-6">
                     <h5>Quick Links</h5>
                     <div class="footer-links">
-                        <a href="index.html">Home</a>
-                        <a href="menu.html">Our Menu</a>
-                        <a href="about.html">About Us</a>
-                        <a href="contact.html">Contact</a>
-                        <a href="cart.html">My Cart</a>
-                        <a href="account.html">My Account</a>
+                        <a href="index.aspx">Home</a>
+                        <a href="admin/menu.aspx">Our Menu</a>
+                        <a href="about.aspx">About Us</a>
+                        <a href="contact.aspx">Contact</a>
+                        <a href="cart.aspx">My Cart</a>
+                        <a href="account.aspx">My Account</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-6">

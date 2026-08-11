@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Online_Food_Odering.Login" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Online_Food_Odering.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.aspx">
           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80" alt="FoodieHub logo" class="brand-logo" />
           <div class="brand-text">
             <span class="brand-name">FoodieHub</span>
@@ -29,10 +29,10 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarMenu">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.aspx">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="menu.aspx">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.aspx">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.aspx">Contact</a></li>
           </ul>
             <div id="authAction"></div>
         </div>
@@ -78,10 +78,10 @@
               </div>
               <button class="btn btn-orange w-100" type="submit">Login</button>
             </form>
-            <p class="mt-3 text-center">New here? <a href="register.html" class="text-orange">Create an account</a></p>
+            <p class="mt-3 text-center">New here? <a href="register.aspx" class="text-orange">Create an account</a></p>
             <p class="mt-2 text-center" style="font-size:.82rem;color:#6c757d">
               <i class="fa-solid fa-shield-halved" style="margin-right:.3rem"></i>Are you an administrator?
-              <a href="admin/login.html" class="text-orange" style="font-weight:600">Admin Login</a>
+              <a href="admin/login.aspx" class="text-orange" style="font-weight:600">Admin Login</a>
             </p>
           </div>
         </div>
@@ -128,12 +128,12 @@
         <div class="col-lg-2 col-md-6 col-6">
           <h5>Quick Links</h5>
           <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="menu.html">Our Menu</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="cart.html">My Cart</a>
-            <a href="account.html">My Account</a>
+            <a href="index.aspx">Home</a>
+            <a href="admin/menu.aspx">Our Menu</a>
+            <a href="about.aspx">About Us</a>
+            <a href="contact.aspx">Contact</a>
+            <a href="cart.aspx">My Cart</a>
+            <a href="account.aspx">My Account</a>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-6">
