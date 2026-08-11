@@ -36,6 +36,9 @@
                 <div class="nav-label">Insights</div>
                 <a href="reviews.aspx" class="nav-item"><i class="fa-solid fa-star"></i>Reviews</a>
                 <a href="reports.aspx" class="nav-item"><i class="fa-solid fa-chart-line"></i>Reports</a>
+
+
+
                 <div class="nav-label">System</div>
                 <a href="settings.aspx" class="nav-item"><i class="fa-solid fa-gear"></i>Settings</a>
             </nav>
