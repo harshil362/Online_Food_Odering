@@ -183,7 +183,7 @@
         ${r.status === 'Pending' ? '<button class="btn-admin btn-admin-success btn-admin-sm" onclick="showAdminToast(\'Review approved\')"><i class="fa-solid fa-check"></i></button>' : ''}
         <asp:LinkButton ID="btnReviewStatus" runat="server" CssClass="btn-admin btn-admin-outline btn-admin-sm" OnClientClick="showAdminToast('Review status updated','info'); return false;" ToolTip="Show/Hide Review"> <i class="fa-solid fa-eye"></i></asp:LinkButton>
 
-        <asp:LinkButton ID="btnDeleteReview" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Review','Delete this review?',()=>showAdminToast('Review deleted','error')); return false;" ToolTip="Delete"> <i class="fa-solid fa-trash"></i></asp:LinkButton>
+  <asp:LinkButton ID="btnDeleteReview" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Review','Delete this review?',()=>showAdminToast('Review deleted','error')); return false;" ToolTip="Delete"> <i class="fa-solid fa-trash"></i></asp:LinkButton>
      
         </div></td>
     </tr>`).join('');

@@ -144,6 +144,8 @@
             <asp:HyperLink ID="btnViewCustomer" runat="server" NavigateUrl="customer-details.aspx" CssClass="btn-admin btn-admin-outline btn-admin-sm" ToolTip="View"> <i class="fa-solid fa-eye"></i></asp:HyperLink>           
             <asp:LinkButton ID="btnEditPartner" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" Style="flex:1;justify-content:center" OnClientClick="showAdminToast('Edit partner'); return false;"> <i class="fa-solid fa-pen"></i> Edit</asp:LinkButton>
          
+
+
             </div>
         </div>
       </div>
