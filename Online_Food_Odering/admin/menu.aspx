@@ -147,9 +147,8 @@
       <td><label style="cursor:pointer"><input type="checkbox" ${f.available ? 'checked' : ''} style="accent-color:#ff5a1f;width:16px;height:16px" onchange="showAdminToast(this.checked?'Item enabled':'Item disabled','info')"></label></td>
       <td>${f.featured ? '<span class="badge-admin badge-featured"><i class="fa-solid fa-fire"></i> Featured</span>' : '—'}</td>
       <td><div class="btn-group-admin">
-        <a href="food-details.aspx" class="btn-admin btn-admin-outline btn-admin-sm" title="View"><i class="fa-solid fa-eye"></i></a>
-        <a href="edit-food.aspx" class="btn-admin btn-admin-info btn-admin-sm" title="Edit"><i class="fa-solid fa-pen"></i></a>
-        <button class="btn-admin btn-admin-danger btn-admin-sm" title="Delete" onclick="showModal('Delete Item','Are you sure you want to delete ${f.name}?',()=>showAdminToast('${f.name} deleted','error'))"><i class="fa-solid fa-trash"></i></button>
+       
+       <asp:LinkButton ID="btnDeleteFood" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" ToolTip="Delete" OnClientClick="showModal('Delete Item','Are you sure you want to delete this item?',()=>showAdminToast('Item deleted','error')); return false;"> <i class="fa-solid fa-trash"></i></asp:LinkButton>
       </div></td>
     </tr>`).join('');
     </script>
