@@ -90,8 +90,12 @@
                             <span class="fs-sm" style="color: #6c757d">12 items</span>
                         </div>
                         <div class="btn-group-admin" style="margin-top: .75rem">
-                            <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
-                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <%-- <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
+                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>--%>
+                            <asp:LinkButton ID="btnEditCategory" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" OnClientClick="showAdminToast('Edit category'); return false;"> <i class="fa-solid fa-pen"></i> Edit </asp:LinkButton>
+
+                            <asp:LinkButton ID="btnDeleteCategory" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error')); return false;"> <i class="fa-solid fa-trash"></i> Delete  </asp:LinkButton>
+
                         </div>
                     </div>
                 </div>
@@ -107,8 +111,13 @@
                             <span class="fs-sm" style="color: #6c757d">8 items</span>
                         </div>
                         <div class="btn-group-admin" style="margin-top: .75rem">
-                            <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
-                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Burger category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <%-- <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
+                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Burger category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>--%>
+
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" OnClientClick="showAdminToast('Edit category'); return false;"> <i class="fa-solid fa-pen"></i> Edit </asp:LinkButton>
+
+                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error')); return false;"> <i class="fa-solid fa-trash"></i> Delete  </asp:LinkButton>
+
                         </div>
                     </div>
                 </div>
@@ -124,8 +133,12 @@
                             <span class="fs-sm" style="color: #6c757d">10 items</span>
                         </div>
                         <div class="btn-group-admin" style="margin-top: .75rem">
-                            <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
-                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Biryani category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <%--<button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
+                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Biryani category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>--%>
+
+                            <asp:LinkButton ID="LinkButton3" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" OnClientClick="showAdminToast('Edit category'); return false;"> <i class="fa-solid fa-pen"></i> Edit </asp:LinkButton>
+
+                            <asp:LinkButton ID="LinkButton4" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error')); return false;"> <i class="fa-solid fa-trash"></i> Delete  </asp:LinkButton>
                         </div>
                     </div>
                 </div>
@@ -141,8 +154,13 @@
                             <span class="fs-sm" style="color: #6c757d">9 items</span>
                         </div>
                         <div class="btn-group-admin" style="margin-top: .75rem">
-                            <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
-                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Chinese category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <%--<button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
+                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Chinese category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>--%>
+
+                            <asp:LinkButton ID="LinkButton5" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" OnClientClick="showAdminToast('Edit category'); return false;"> <i class="fa-solid fa-pen"></i> Edit </asp:LinkButton>
+
+                            <asp:LinkButton ID="LinkButton6" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error')); return false;"> <i class="fa-solid fa-trash"></i> Delete  </asp:LinkButton>
+
                         </div>
                     </div>
                 </div>
@@ -158,8 +176,13 @@
                             <span class="fs-sm" style="color: #6c757d">7 items</span>
                         </div>
                         <div class="btn-group-admin" style="margin-top: .75rem">
-                            <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
-                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Desserts category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <%-- <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
+                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Desserts category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>--%>
+
+                            <asp:LinkButton ID="LinkButton7" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" OnClientClick="showAdminToast('Edit category'); return false;"> <i class="fa-solid fa-pen"></i> Edit </asp:LinkButton>
+
+                            <asp:LinkButton ID="LinkButton8" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error')); return false;"> <i class="fa-solid fa-trash"></i> Delete  </asp:LinkButton>
+
                         </div>
                     </div>
                 </div>
@@ -175,8 +198,13 @@
                             <span class="fs-sm" style="color: #6c757d">6 items</span>
                         </div>
                         <div class="btn-group-admin" style="margin-top: .75rem">
-                            <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
-                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Drinks category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <%-- <button class="btn-admin btn-admin-info btn-admin-sm" onclick="showAdminToast('Edit category')"><i class="fa-solid fa-pen"></i>Edit</button>
+                            <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Category','Delete Drinks category?',()=>showAdminToast('Category deleted','error'))"><i class="fa-solid fa-trash"></i>Delete</button>--%>
+
+                            <asp:LinkButton ID="LinkButton9" runat="server" CssClass="btn-admin btn-admin-info btn-admin-sm" OnClientClick="showAdminToast('Edit category'); return false;"> <i class="fa-solid fa-pen"></i> Edit </asp:LinkButton>
+
+                            <asp:LinkButton ID="LinkButton10" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Category','Delete Pizza category?',()=>showAdminToast('Category deleted','error')); return false;"> <i class="fa-solid fa-trash"></i> Delete  </asp:LinkButton>
+
                         </div>
                     </div>
                 </div>

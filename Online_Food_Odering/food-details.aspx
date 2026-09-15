@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse justify-content-between">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
                         <li class="nav-item"><a class="nav-link" href="index.aspx">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="menu.aspx">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.aspx">Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.aspx">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.aspx">Contact</a></li>
                     </ul>
@@ -45,16 +45,19 @@
                 </div>
             </div>
         </nav>
+        <!-- HEADER END -->
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!-- MAIN CONTENT START -->
 
 
     <main class="container py-5">
         <div id="foodDetails"></div>
     </main>
+    <!-- MAIN CONTENT END -->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <!-- FOOTER START -->
 
 
     <footer class="footer">

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Online_Food_Odering
 {
-    public partial class food_details : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class food_details : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }

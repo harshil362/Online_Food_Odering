@@ -19,7 +19,8 @@
 
         <aside class="admin-sidebar">
             <div class="sidebar-brand">
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80" alt="FoodieHub"><span>FoodieHub</span></div>
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80" alt="FoodieHub"><span>FoodieHub</span>
+            </div>
             <nav class="sidebar-nav">
                 <div class="nav-label">Main</div>
                 <a href="dashboard.aspx" class="nav-item"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
@@ -43,16 +44,21 @@
         <header class="admin-topbar">
             <div class="topbar-left">
                 <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
-                <div class="topbar-search"><i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="Search anything..."></div>
+                <div class="topbar-search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search anything...">
+                </div>
             </div>
             <div class="topbar-right">
                 <div class="topbar-icon"><i class="fa-solid fa-bell"></i><span class="topbar-badge">3</span></div>
                 <div style="position: relative">
                     <div class="admin-profile" onclick="toggleProfileDropdown()">
-                        <img src="https://i.pravatar.cc/40?img=68" alt="Admin"><span>Admin</span><i class="fa-solid fa-chevron-down" style="font-size: .65rem; color: #6c757d"></i></div>
-                    <div class="profile-dropdown"><a href="settings.aspx"><i class="fa-solid fa-user"></i>My Profile</a><a href="settings.aspx"><i class="fa-solid fa-gear"></i>Settings</a><div class="divider"></div>
-                        <button onclick="adminLogout()" class="text-danger"><i class="fa-solid fa-right-from-bracket"></i>Logout</button></div>
+                        <img src="https://i.pravatar.cc/40?img=68" alt="Admin"><span>Admin</span><i class="fa-solid fa-chevron-down" style="font-size: .65rem; color: #6c757d"></i>
+                    </div>
+                    <div class="profile-dropdown">
+                        <a href="settings.aspx"><i class="fa-solid fa-user"></i>My Profile</a><a href="settings.aspx"><i class="fa-solid fa-gear"></i>Settings</a><div class="divider"></div>
+                        <button onclick="adminLogout()" class="text-danger"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -104,8 +110,10 @@
 
             <div class="admin-card">
                 <div class="filter-bar">
-                    <div class="input-icon"><i class="fa-solid fa-search"></i>
-                        <input type="text" id="reviewSearch" class="form-control" placeholder="Search reviews..."></div>
+                    <div class="input-icon">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="reviewSearch" class="form-control" placeholder="Search reviews...">
+                    </div>
                     <select class="form-select" style="max-width: 140px">
                         <option value="">All Status</option>
                         <option>Approved</option>
@@ -158,7 +166,8 @@
             <p>Are you sure?</p>
             <div class="admin-modal-actions">
                 <button class="btn-admin btn-admin-outline" onclick="closeModal()">Cancel</button>
-                <button class="btn-admin btn-admin-primary" onclick="confirmModal()">Confirm</button></div>
+                <button class="btn-admin btn-admin-primary" onclick="confirmModal()">Confirm</button>
+            </div>
         </div>
     </div>
     <script src="js/admin.js"></script>
@@ -172,9 +181,11 @@
       <td>${statusBadge(r.status)}</td>
       <td><div class="btn-group-admin">
         ${r.status === 'Pending' ? '<button class="btn-admin btn-admin-success btn-admin-sm" onclick="showAdminToast(\'Review approved\')"><i class="fa-solid fa-check"></i></button>' : ''}
-        <button class="btn-admin btn-admin-outline btn-admin-sm" onclick="showAdminToast('Review ${r.status === "Hidden" ? "shown" : "hidden"}','info')"><i class="fa-solid fa-eye${r.status === 'Hidden' ? '' : '-slash'}"></i></button>
-        <button class="btn-admin btn-admin-danger btn-admin-sm" onclick="showModal('Delete Review','Delete this review?',()=>showAdminToast('Review deleted','error'))"><i class="fa-solid fa-trash"></i></button>
-      </div></td>
+        <asp:LinkButton ID="btnReviewStatus" runat="server" CssClass="btn-admin btn-admin-outline btn-admin-sm" OnClientClick="showAdminToast('Review status updated','info'); return false;" ToolTip="Show/Hide Review"> <i class="fa-solid fa-eye"></i></asp:LinkButton>
+
+  <asp:LinkButton ID="btnDeleteReview" runat="server" CssClass="btn-admin btn-admin-danger btn-admin-sm" OnClientClick="showModal('Delete Review','Delete this review?',()=>showAdminToast('Review deleted','error')); return false;" ToolTip="Delete"> <i class="fa-solid fa-trash"></i></asp:LinkButton>
+     
+        </div></td>
     </tr>`).join('');
     </script>
     </body>
