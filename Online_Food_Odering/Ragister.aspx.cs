@@ -13,6 +13,8 @@ namespace Online_Food_Odering
     public partial class Ragister : System.Web.UI.Page
     {
         SqlConnection con;
+        SqlDataAdapter da;
+        DataSet ds;
         SqlCommand cmd;
         string fnm;
 
@@ -20,7 +22,7 @@ namespace Online_Food_Odering
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            fillgrid();
 
         }
 
@@ -30,12 +32,21 @@ namespace Online_Food_Odering
             con.Open();
         }
 
+        void fillgrid()
+        {
+            getcon();
+            da = new SqlDataAdapter("select * from Users_tbl", con);
+            ds = new DataSet();
+            da.Fill(ds);
+            GridView1.DataSource = ds;
+            GridView1.DataBind();
+        }
+
         void clear()
         {
             fullName.Text = "";
             email.Text = "";
             password.Text = "";
-            
             
         }
 
@@ -67,6 +78,7 @@ namespace Online_Food_Odering
             getcon();
             cmd = new SqlCommand("insert into Users_tbl(FullName,Email,Phone,Password,Gender,Role)values('" + fullName.Text + "','" + email.Text + "','" + phone.Text + "','" + password.Text + "','"+ gender + "', '"+role+"' )", con);
             cmd.ExecuteNonQuery();
+            fillgrid();
             clear();
 
 
