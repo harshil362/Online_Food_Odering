@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <link rel="stylesheet" href="css/style.css" />
     </head>
+
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -140,7 +141,6 @@
                                         <i class="fa-solid fa-eye"></i>
 
                                     </button>
-
                                 </div>
 
                                 <div class="validation-error" id="registerPasswordError">
@@ -205,55 +205,7 @@
                                 Style="height: 35px; border-radius: 99px;"
                                 OnClick="registerBtn_Click" />
 
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="313px">
-                                <Columns>
-                                    <asp:TemplateField HeaderText="Id">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Full Name">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("FullName") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Email">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Email") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Mobail Number">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Password">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Password") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Gender">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label6" runat="server" Text='<%# Eval("Gender") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Role">
-                                        <ItemTemplate>
-                                            <asp:Label ID="Label7" runat="server" Text='<%# Eval("Role") %>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Edit">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("Id") %>'>Edit</asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Delete">
-                                        <ItemTemplate>
-                                            <asp:LinkButton ID="LinkButton2" runat="server" CommandArgument='<%# Eval("Id") %>'>Delete</asp:LinkButton>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
+                            
 
                         </div>
                         <p class="mt-3 text-center">Already have an account? <a href="Login.aspx" class="text-orange">Login</a></p>
