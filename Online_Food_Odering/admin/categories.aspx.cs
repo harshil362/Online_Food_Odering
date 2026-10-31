@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +12,11 @@ namespace Online_Food_Odering.admin
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("add-categories.aspx");
         }
     }
 }

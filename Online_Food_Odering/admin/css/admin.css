@@ -130,10 +130,10 @@ a{text-decoration:none;color:inherit}
 .btn-group-admin{display:flex;gap:.35rem}
 
 /* ── Forms ── */
-.admin-form .form-label{font-size:.82rem;font-weight:600;color:var(--admin-text);margin-bottom:.35rem}
-.admin-form .form-control,.admin-form .form-select{border-radius:.6rem;border:1px solid var(--admin-border);padding:.6rem .85rem;font-size:.85rem;font-family:inherit;transition:border-color .2s,box-shadow .2s}
-.admin-form .form-control:focus,.admin-form .form-select:focus{border-color:var(--admin-primary);box-shadow:0 0 0 3px rgba(255,90,31,.1);outline:none}
-.admin-form textarea.form-control{min-height:100px;resize:vertical}
+.form-label, .admin-form .form-label{display:block;font-size:.82rem;font-weight:600;color:var(--admin-text);margin-bottom:.35rem}
+.form-control, .form-select, .admin-form .form-control, .admin-form .form-select{display:block;width:100%;box-sizing:border-box;border-radius:.6rem;border:1px solid var(--admin-border);padding:.6rem .85rem;font-size:.85rem;font-family:inherit;transition:border-color .2s,box-shadow .2s}
+.form-control:focus, .form-select:focus, .admin-form .form-control:focus, .admin-form .form-select:focus{border-color:var(--admin-primary);box-shadow:0 0 0 3px rgba(255,90,31,.1);outline:none}
+textarea.form-control, .admin-form textarea.form-control{min-height:100px;resize:vertical}
 .admin-form .form-check-input:checked{background-color:var(--admin-primary);border-color:var(--admin-primary)}
 .admin-form .form-switch .form-check-input{width:2.5em;height:1.25em}
 .input-icon{position:relative}
@@ -247,3 +247,496 @@ a{text-decoration:none;color:inherit}
 .fw-600{font-weight:600}
 .fs-sm{font-size:.82rem}
 .text-truncate-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* =========================================
+   ADD CATEGORY PAGE
+   ========================================= */
+
+.add-category-page {
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.add-category-header {
+    margin-bottom: 25px;
+}
+
+    .add-category-header h1 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 750;
+        color: #20202f;
+    }
+
+.add-category-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #858b98;
+}
+
+    .add-category-breadcrumb span:first-child {
+        color: #ff6422;
+    }
+
+    .add-category-breadcrumb i {
+        font-size: 10px;
+        color: #a5aab4;
+    }
+
+
+/* Layout */
+
+.add-category-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 22px;
+    align-items: start;
+}
+
+.add-category-main,
+.add-category-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* Cards */
+
+.category-form-card {
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(30, 35, 50, 0.05);
+}
+
+.category-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 20px 22px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.category-section-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+    .category-section-icon.orange {
+        background: #fff0e9;
+        color: #ff6422;
+    }
+
+    .category-section-icon.purple {
+        background: #f1eaff;
+        color: #7b45d8;
+    }
+
+    .category-section-icon.green {
+        background: #e9f8ef;
+        color: #159457;
+    }
+
+.category-card-header h3 {
+    margin: 0 0 3px;
+    font-size: 17px;
+    color: #20202f;
+}
+
+.category-card-header p {
+    margin: 0;
+    font-size: 12px;
+    color: #858b98;
+}
+
+.category-card-body {
+    padding: 22px;
+}
+
+
+/* Form */
+
+.category-form-group {
+    margin-bottom: 22px;
+}
+
+    .category-form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .category-form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #252536;
+    }
+
+        .category-form-group label span {
+            color: #ff6422;
+        }
+
+.category-form-control {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #dfe3e8;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #252536;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+    .category-form-control::placeholder {
+        color: #a4aab5;
+    }
+
+    .category-form-control:focus {
+        border-color: #ff6422;
+        box-shadow: 0 0 0 3px rgba(255, 100, 34, 0.10);
+    }
+
+.category-description {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+/* File Upload */
+
+.category-file-upload {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 28px;
+    border: 2px dashed #dfe4eb;
+    border-radius: 12px;
+    background: #fafbfc;
+    color: #69717f;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.category-help-text {
+    display: block;
+    margin-top: 9px;
+    color: #9298a3;
+    font-size: 12px;
+}
+
+
+/* Settings */
+
+.category-setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+    .category-setting-row strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #252536;
+        font-size: 14px;
+    }
+
+    .category-setting-row small {
+        display: block;
+        color: #9298a3;
+        font-size: 12px;
+    }
+
+
+/* Checkbox */
+
+.category-checkbox input {
+    width: 19px;
+    height: 19px;
+    accent-color: #ff6422;
+    cursor: pointer;
+}
+
+
+/* Actions */
+
+.category-action-card {
+    background: #ffffff;
+    border: 1px solid #edf0f4;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 5px 18px rgba(30, 35, 50, 0.05);
+}
+
+.category-save-btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #ff6422;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+    .category-save-btn:hover {
+        background: #ed5415;
+        box-shadow: 0 7px 18px rgba(255, 100, 34, 0.20);
+    }
+
+.category-cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e1e4e9;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #30313b !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+    .category-cancel-btn:hover {
+        background: #f7f7f8;
+    }
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+
+    .add-category-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .add-category-page {
+        padding: 20px 15px;
+    }
+
+    .add-category-header h1 {
+        font-size: 25px;
+    }
+}
+
+/* =========================================
+   ADD FOOD PAGE - FORM CONTROL FIX
+   ========================================= */
+
+/* Textboxes and General Inputs */
+.admin-main .admin-form .form-control,
+.admin-main .admin-form input.form-control,
+.admin-main .form-control,
+.admin-main input.form-control,
+.admin-card .form-control,
+.admin-card input.form-control,
+.admin-form .form-control,
+.admin-form input.form-control,
+input.form-control,
+.form-control {
+    display: block !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 10px 14px !important;
+    box-sizing: border-box !important;
+    border: 1px solid #dfe3e8 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-size: 14px !important;
+    font-family: inherit !important;
+    color: #212529 !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    outline: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    max-width: 100% !important;
+}
+
+/* Textarea */
+.admin-main .admin-form textarea.form-control,
+.admin-main textarea.form-control,
+.admin-card textarea.form-control,
+.admin-form textarea.form-control,
+textarea.form-control {
+    display: block !important;
+    width: 100% !important;
+    min-height: 110px !important;
+    height: auto !important;
+    padding: 10px 14px !important;
+    box-sizing: border-box !important;
+    border: 1px solid #dfe3e8 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    font-size: 14px !important;
+    font-family: inherit !important;
+    color: #212529 !important;
+    line-height: 1.5 !important;
+    resize: vertical !important;
+    margin: 0 !important;
+    outline: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    max-width: 100% !important;
+}
+
+/* Select Dropdowns */
+.admin-main .admin-form .form-select,
+.admin-main .admin-form select.form-select,
+.admin-main .form-select,
+.admin-main select.form-select,
+.admin-card .form-select,
+.admin-card select.form-select,
+.admin-form .form-select,
+.admin-form select.form-select,
+select.form-select,
+.form-select {
+    display: block !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    height: 44px !important;
+    padding: 10px 14px !important;
+    padding-right: 36px !important;
+    box-sizing: border-box !important;
+    border: 1px solid #dfe3e8 !important;
+    border-radius: 8px !important;
+    background-color: #ffffff !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 14px center !important;
+    background-size: 16px 12px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    font-size: 14px !important;
+    font-family: inherit !important;
+    color: #212529 !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    outline: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    max-width: 100% !important;
+}
+
+/* Focus States */
+.admin-main .admin-form .form-control:focus,
+.admin-main .admin-form input.form-control:focus,
+.admin-main .admin-form textarea.form-control:focus,
+.admin-main .admin-form .form-select:focus,
+.admin-main .admin-form select.form-select:focus,
+.admin-main .form-control:focus,
+.admin-main input.form-control:focus,
+.admin-main textarea.form-control:focus,
+.admin-main .form-select:focus,
+.admin-main select.form-select:focus,
+.admin-card .form-control:focus,
+.admin-card input.form-control:focus,
+.admin-card textarea.form-control:focus,
+.admin-card .form-select:focus,
+.admin-card select.form-select:focus,
+.admin-form .form-control:focus,
+.admin-form input.form-control:focus,
+.admin-form textarea.form-control:focus,
+.admin-form .form-select:focus,
+.admin-form select.form-select:focus,
+.form-control:focus,
+input.form-control:focus,
+textarea.form-control:focus,
+.form-select:focus,
+select.form-select:focus {
+    border-color: #ff5a1f !important;
+    box-shadow: 0 0 0 3px rgba(255, 90, 31, 0.12) !important;
+    outline: none !important;
+}
+
+/* Placeholder */
+.admin-main .admin-form .form-control::placeholder,
+.admin-main .admin-form input.form-control::placeholder,
+.admin-main .admin-form textarea.form-control::placeholder,
+.admin-main .form-control::placeholder,
+.admin-main input.form-control::placeholder,
+.admin-main textarea.form-control::placeholder,
+.admin-card .form-control::placeholder,
+.admin-card input.form-control::placeholder,
+.admin-card textarea.form-control::placeholder,
+.admin-form .form-control::placeholder,
+.admin-form input.form-control::placeholder,
+.admin-form textarea.form-control::placeholder,
+.form-control::placeholder,
+input.form-control::placeholder,
+textarea.form-control::placeholder {
+    color: #9aa0a6 !important;
+    opacity: 1 !important;
+}
+
+/* Form Labels */
+.admin-main .admin-form .form-label,
+.admin-main .form-label,
+.admin-card .form-label,
+.admin-form .form-label,
+.form-label {
+    display: block !important;
+    margin-bottom: 7px !important;
+    color: #202124 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .admin-main .admin-form .form-control,
+    .admin-main .admin-form input.form-control,
+    .admin-main .admin-form textarea.form-control,
+    .admin-main .admin-form .form-select,
+    .admin-main .admin-form select.form-select,
+    .admin-main .form-control,
+    .admin-main input.form-control,
+    .admin-main textarea.form-control,
+    .admin-main .form-select,
+    .admin-main select.form-select,
+    .admin-card .form-control,
+    .admin-card input.form-control,
+    .admin-card textarea.form-control,
+    .admin-card .form-select,
+    .admin-card select.form-select,
+    .admin-form .form-control,
+    .admin-form input.form-control,
+    .admin-form textarea.form-control,
+    .admin-form .form-select,
+    .admin-form select.form-select,
+    .form-control,
+    input.form-control,
+    textarea.form-control,
+    .form-select,
+    select.form-select {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
