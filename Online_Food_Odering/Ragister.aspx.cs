@@ -1,10 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,14 +10,11 @@ namespace Online_Food_Odering
     {
         SqlConnection con;
         SqlCommand cmd;
-        string fnm;
 
-        string s = ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
+        string s = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\5BCA\Asp.Net\Online_Food_Odering\Online_Food_Odering\App_Data\FoodieHub.mdf;Integrated Security=True";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-
         }
 
         void getcon()
@@ -34,14 +27,15 @@ namespace Online_Food_Odering
         {
             fullName.Text = "";
             email.Text = "";
+            phone.Text = "";
             password.Text = "";
-            
-            
+
+            rbMale.Checked = false;
+            rbFemale.Checked = false;
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-      
         }
 
         protected void registerBtn_Click(object sender, ImageClickEventArgs e)
@@ -63,19 +57,25 @@ namespace Online_Food_Odering
 
             string role = ddlRole.SelectedValue;
 
-
             getcon();
-            cmd = new SqlCommand("insert into Users_tbl(FullName,Email,Phone,Password,Gender,Role)values('" + fullName.Text + "','" + email.Text + "','" + phone.Text + "','" + password.Text + "','"+ gender + "', '"+role+"' )", con);
+
+            cmd = new SqlCommand(
+                "insert into Users_tbl(FullName,Email,Phone,Password,Gender,Role) " +
+                "values('" + fullName.Text + "','" + email.Text + "','" +
+                phone.Text + "','" + password.Text + "','" + gender + "','" +
+                role + "')", con);
+
             cmd.ExecuteNonQuery();
+
+            con.Close();
+
             clear();
 
-
-            Response.Redirect("Ragister.aspx");
+            Response.Redirect("Login.aspx");
         }
 
         protected void rbFemale_CheckedChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

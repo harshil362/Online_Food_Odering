@@ -19,218 +19,362 @@
     <!-- MAIN CONTENT START -->
 
 
-    <main class="container py-5">
-        <div class="row justify-content-center align-items-center g-4">
-            <div class="col-lg-6 order-lg-2">
-                <div class="card form-card p-4">
-                    <div class="text-center mb-4">
-                        <h2 class="section-title">Create your account</h2>
-                        <p class="section-subtitle">Join FoodieHub for faster ordering and exclusive offers.</p>
-                    </div>
-                    <div class="d-flex gap-2 mb-4 flex-column">
-                        <a href="#" class="btn btn-social btn-outline-secondary w-100"><i class="fa-brands fa-google"></i>Continue with Google</a>
-                        <a href="#" class="btn btn-social btn-outline-secondary w-100"><i class="fa-brands fa-apple"></i>Continue with Apple</a>
-                    </div>
-                    <div class="text-center mb-4"><span class="text-muted">or sign up with email</span></div>
-                    <div id="registerFormPanel">
-                        <div class="row g-3">
-                            <%--<div class="col-md-6">
-                                <label class="form-label">Full name</label>
-                                <input name="name" class="form-control" placeholder="Your name" required />
-                                <div class="validation-error" id="registerNameError">Full name is required.</div>
+    <!-- MAIN CONTENT START -->
 
-                            </div>--%>
+<main class="container py-5">
 
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Full Name</label>
+    <div class="row justify-content-center align-items-center g-4">
 
-                                <asp:TextBox
-                                    runat="server"
-                                    ID="fullName"
-                                    ClientIDMode="Static"
-                                    TextMode="SingleLine"
-                                    CssClass="form-control form-control-custom"
-                                    placeholder="Your name"
-                                    required="required">
-                                </asp:TextBox>
+        <!-- LEFT SIDE - INFORMATION -->
+        <div class="col-lg-4 order-lg-1">
 
-                                <div class="validation-error" id="registerNameError">
-                                    Full name is required.
-                                </div>
-                            </div>
+            <div class="auth-aside p-4">
 
-                            <%--                            <div class="col-md-6">
-                                <label class="form-label">Email</label>
-                                <input name="email" type="email" class="form-control" placeholder="you@example.com" required />
-                                <div class="validation-error" id="registerEmailError">Please enter a valid email.</div>
-                            </div>--%>
-
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Email</label>
-                                <asp:TextBox
-                                    runat="server"
-                                    ID="email"
-                                    ClientIDMode="Static"
-                                    TextMode="Email"
-                                    CssClass="form-control form-control-custom"
-                                    placeholder="you@example.com"
-                                    required="required">
-                                </asp:TextBox>
-
-                                <div class="validation-error" id="registerEmailError">
-                                    Please enter a valid email.
-   
-                                </div>
-                            </div>
-
-                            <%-- <div class="col-md-6">
-                                <label class="form-label">Mobile number</label>
-                                <input name="phone" class="form-control" placeholder="(123) 456-7890" required />
-                                <div class="validation-error" id="registerPhoneError">Mobile number is required.</div>
-                            </div>--%>
-
-
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Mobile number</label>
-                                <asp:TextBox
-                                    runat="server"
-                                    ID="phone"
-                                    ClientIDMode="Static"
-                                    TextMode="Phone"
-                                    CssClass="form-control form-control-custom"
-                                    placeholder="(123) 456-7890"
-                                    required="required">
-                                </asp:TextBox>
-
-                                <div class="validation-error" id="registerPhoneError">
-                                    Mobile number is required.
-   
-                                </div>
-                            </div>
-
-                            <%--                            <div class="col-md-6">
-                                <label class="form-label">Password</label>
-                                <div class="input-group">
-                                    <input id="registerPassword" name="password" type="password" class="form-control" placeholder="Create password" required />
-                                    <button class="btn btn-outline-secondary" type="button" data-toggle-password="#registerPassword"><i class="fa-solid fa-eye"></i></button>
-                                </div>
-                                <div class="validation-error" id="registerPasswordError">Password must be at least 8 characters.</div>
-                            </div>--%>
-
-
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Password</label>
-
-                                <div class="input-group">
-
-                                    <asp:TextBox
-                                        runat="server"
-                                        ID="password"
-                                        ClientIDMode="Static"
-                                        TextMode="Password"
-                                        CssClass="form-control form-control-custom"
-                                        placeholder="Create password"
-                                        required="required">
-                                    </asp:TextBox>
-
-                                    <button
-                                        class="btn btn-outline-secondary"
-                                        type="button"
-                                        data-toggle-password="#password">
-
-                                        <i class="fa-solid fa-eye"></i>
-
-                                    </button>
-                                </div>
-
-                                <div class="validation-error" id="registerPasswordError">
-                                    Password must be at least 8 characters.
-   
-                                </div>
-
-                            </div>
-                            <div class="form-text text-muted mt-2">Passwords must be at least 8 characters long.</div>
-
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Gender</label>
-
-                                <div class="mt-2">
-                                    <asp:RadioButton
-                                        ID="rbMale"
-                                        runat="server"
-                                        GroupName="Gender"
-                                        Text=" Male"
-                                        CssClass="me-3" />
-
-                                    <asp:RadioButton
-                                        ID="rbFemale"
-                                        runat="server"
-                                        GroupName="Gender"
-                                        Text=" Female" OnCheckedChanged="rbFemale_CheckedChanged" />
-                                </div>
-                            </div>
-
-                            <!-- Role -->
-                            <div class="col-md-6">
-                                <label class="form-label-custom">Role</label>
-
-                                <asp:DropDownList
-                                    ID="ddlRole"
-                                    runat="server"
-                                    CssClass="form-control form-control-custom">
-
-                                    <asp:ListItem Text="Select Role" Value="" />
-                                    <asp:ListItem Text="Customer" Value="Customer" />
-                                    <asp:ListItem Text="Admin" Value="Admin" />
-
-                                </asp:DropDownList>
-                            </div>  
-
-                            <%--  <button class="btn btn-orange w-100 mt-4" type="submit">Register</button>--%>
-                            <%--                        <asp:ImageButton ID="ImageButton1" runat="server" />--%>
-                            <%-- <asp:Button
-                                ID="btnRegister"
-                                runat="server"
-                                Text="Register"
-                                CssClass="btn btn-orange w-100 mt-4"
-                                OnClick="btnRegister_Click" />--%>
-
-                            <%--                            <asp:ImageButton ID="registerBtn" runat="server" ClientIDMode="Static" ImageUrl="images/Ragister.jpeg" CssClass="w-100" Style="height: 35px; border-radius: 99px;" OnClick="registerBtn_Click" />--%>
-                            <asp:ImageButton
-                                ID="registerBtn"
-                                runat="server"
-                                ClientIDMode="Static"
-                                ImageUrl="images/Ragister.jpeg"
-                                CssClass="w-100"
-                                Style="height: 35px; border-radius: 99px;"
-                                OnClick="registerBtn_Click" />
-
-                            
-
-                        </div>
-                        <p class="mt-3 text-center">Already have an account? <a href="Login.aspx" class="text-orange">Login</a></p>
-                    </div>
+                <div class="mb-4">
+                    <span class="badge bg-warning text-dark rounded-pill px-3 py-2">
+                        Start ordering faster
+                    </span>
                 </div>
 
-                <div class="col-lg-4 order-lg-1">
-                    <div class="auth-aside p-4">
-                        <div class="mb-4">
-                            <span class="badge bg-warning text-dark rounded-pill px-3 py-2">Start ordering faster</span>
-                        </div>
-                        <h3 class="mb-3">Personalized dining starts here</h3>
-                        <p class="text-muted">Create an account to save your delivery preferences, access deals, and check out in just a few clicks.</p>
-                        <ul class="list-unstyled mt-4">
-                            <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>Exclusive member rewards</li>
-                            <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>Saved addresses and payment details</li>
-                            <li class="mb-3"><i class="fa-solid fa-check text-warning me-2"></i>One-tap reorder</li>
-                        </ul>
-                        <div class="mt-4 text-muted small">
-                            By creating an account, you agree to our <a href="#" class="text-orange">Terms of Service</a> and <a href="#" class="text-orange">Privacy Policy</a>.
-                        </div>
-                    </div>
+                <h3 class="mb-3">
+                    Personalized dining starts here
+                </h3>
+
+                <p class="text-muted">
+                    Create an account to save your delivery preferences,
+                    access deals, and check out in just a few clicks.
+                </p>
+
+                <ul class="list-unstyled mt-4">
+
+                    <li class="mb-3">
+                        <i class="fa-solid fa-check text-warning me-2"></i>
+                        Exclusive member rewards
+                    </li>
+
+                    <li class="mb-3">
+                        <i class="fa-solid fa-check text-warning me-2"></i>
+                        Saved addresses and payment details
+                    </li>
+
+                    <li class="mb-3">
+                        <i class="fa-solid fa-check text-warning me-2"></i>
+                        One-tap reorder
+                    </li>
+
+                </ul>
+
+                <div class="mt-4 text-muted small">
+
+                    By creating an account, you agree to our
+
+                    <a href="#" class="text-orange">
+                        Terms of Service
+                    </a>
+
+                    and
+
+                    <a href="#" class="text-orange">
+                        Privacy Policy
+                    </a>.
+
                 </div>
+
             </div>
-    </main>
+
+        </div>
+
+
+        <!-- RIGHT SIDE - REGISTER FORM -->
+        <div class="col-lg-6 order-lg-2">
+
+            <div class="card form-card p-4">
+
+                <div class="text-center mb-4">
+
+                    <h2 class="section-title">
+                        Create your account
+                    </h2>
+
+                    <p class="section-subtitle">
+                        Join FoodieHub for faster ordering and exclusive offers.
+                    </p>
+
+                </div>
+
+
+                <!-- SOCIAL LOGIN -->
+
+                <div class="d-flex gap-2 mb-4 flex-column">
+
+                    <a href="#"
+                       class="btn btn-social btn-outline-secondary w-100">
+
+                        <i class="fa-brands fa-google"></i>
+                        Continue with Google
+
+                    </a>
+
+                    <a href="#"
+                       class="btn btn-social btn-outline-secondary w-100">
+
+                        <i class="fa-brands fa-apple"></i>
+                        Continue with Apple
+
+                    </a>
+
+                </div>
+
+
+                <div class="text-center mb-4">
+
+                    <span class="text-muted">
+                        or sign up with email
+                    </span>
+
+                </div>
+
+
+                <!-- REGISTER FORM -->
+
+                <div id="registerFormPanel">
+
+                    <div class="row g-3">
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label-custom">
+                                Full Name
+                            </label>
+
+                            <asp:TextBox
+                                runat="server"
+                                ID="fullName"
+                                ClientIDMode="Static"
+                                TextMode="SingleLine"
+                                CssClass="form-control form-control-custom"
+                                placeholder="Your name"
+                                required="required">
+                            </asp:TextBox>
+
+                            <div class="validation-error"
+                                 id="registerNameError">
+
+                                Full name is required.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label-custom">
+                                Email
+                            </label>
+
+                            <asp:TextBox
+                                runat="server"
+                                ID="email"
+                                ClientIDMode="Static"
+                                TextMode="Email"
+                                CssClass="form-control form-control-custom"
+                                placeholder="you@example.com"
+                                required="required">
+                            </asp:TextBox>
+
+                            <div class="validation-error"
+                                 id="registerEmailError">
+
+                                Please enter a valid email.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MOBILE -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label-custom">
+                                Mobile number
+                            </label>
+
+                            <asp:TextBox
+                                runat="server"
+                                ID="phone"
+                                ClientIDMode="Static"
+                                TextMode="Phone"
+                                CssClass="form-control form-control-custom"
+                                placeholder="(123) 456-7890"
+                                required="required">
+                            </asp:TextBox>
+
+                            <div class="validation-error"
+                                 id="registerPhoneError">
+
+                                Mobile number is required.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label-custom">
+                                Password
+                            </label>
+
+                            <div class="input-group">
+
+                                <asp:TextBox
+                                    runat="server"
+                                    ID="password"
+                                    ClientIDMode="Static"
+                                    TextMode="Password"
+                                    CssClass="form-control form-control-custom"
+                                    placeholder="Create password"
+                                    required="required">
+                                </asp:TextBox>
+
+                                <button
+                                    class="btn btn-outline-secondary"
+                                    type="button"
+                                    data-toggle-password="#password">
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="validation-error"
+                                 id="registerPasswordError">
+
+                                Password must be at least 8 characters.
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD HELP -->
+
+                        <div class="form-text text-muted mt-2">
+
+                            Passwords must be at least 8 characters long.
+
+                        </div>
+
+
+                        <!-- GENDER -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label-custom">
+                                Gender
+                            </label>
+
+                            <div class="mt-2">
+
+                                <asp:RadioButton
+                                    ID="rbMale"
+                                    runat="server"
+                                    GroupName="Gender"
+                                    Text=" Male"
+                                    CssClass="me-3" />
+
+                                <asp:RadioButton
+                                    ID="rbFemale"
+                                    runat="server"
+                                    GroupName="Gender"
+                                    Text=" Female"
+                                    OnCheckedChanged="rbFemale_CheckedChanged" />
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ROLE -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label-custom">
+                                Role
+                            </label>
+
+                            <asp:DropDownList
+                                ID="ddlRole"
+                                runat="server"
+                                CssClass="form-control form-control-custom">
+
+                                <asp:ListItem
+                                    Text="Select Role"
+                                    Value="" />
+
+                                <asp:ListItem
+                                    Text="Customer"
+                                    Value="Customer" />
+
+                                <asp:ListItem
+                                    Text="Admin"
+                                    Value="Admin" />
+
+                            </asp:DropDownList>
+
+                        </div>
+
+
+                        <!-- REGISTER BUTTON -->
+
+                        <asp:ImageButton
+                            ID="registerBtn"
+                            runat="server"
+                            ClientIDMode="Static"
+                            ImageUrl="images/Ragister.jpeg"
+                            CssClass="w-100"
+                            Style="height: 35px; border-radius: 99px;"
+                            OnClick="registerBtn_Click" />
+
+                    </div>
+
+
+                    <!-- LOGIN LINK -->
+
+                    <p class="mt-3 text-center">
+
+                        Already have an account?
+
+                        <a href="Login.aspx"
+                           class="text-orange">
+
+                            Login
+
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- MAIN CONTENT END -->
 
     <!-- MAIN CONTENT END -->
     </div>
@@ -287,10 +431,10 @@
                     <h5>Newsletter</h5>
                     <div class="footer-newsletter">
                         <p>Subscribe for new menu items, exclusive offers, and seasonal specials.</p>
-                        <form class="d-flex flex-column gap-2" onsubmit="event.preventDefault(); showToast('Thanks for subscribing!');">
-                            <input type="email" class="form-control" placeholder="Your email address" required />
-                            <button class="btn btn-orange w-100" type="submit"><i class="fa-solid fa-paper-plane me-2"></i>Subscribe</button>
-                        </form>
+                        <div class="d-flex flex-column gap-2">
+                            <input type="email" class="form-control" placeholder="Your email address" />
+                            <button class="btn btn-orange w-100" type="button" onclick="showToast('Thanks for subscribing!');"><i class="fa-solid fa-paper-plane me-2"></i>Subscribe</button>
+                        </div>
                     </div>
                 </div>
             </div>
