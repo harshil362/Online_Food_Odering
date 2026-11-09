@@ -42,7 +42,7 @@
                         <li class="nav-item"><a class="nav-link" href="contact.aspx">Contact</a></li>
                     </ul>
                     <div class="d-flex align-items-center gap-3">
-                        <a class="nav-link position-relative" href="cart.html">
+                        <a class="nav-link position-relative" href="AddToCart.aspx">
                             <i class="fa-solid fa-shopping-cart fa-lg"></i>
                             <span class="cart-badge">0</span>
                         </a>

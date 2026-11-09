@@ -52,10 +52,10 @@
                                     <li class="nav-item"><a class="nav-link" href="contact.aspx">Contact</a></li>
                                 </ul>
                                 <div class="d-flex align-items-center gap-3">
-                                    <form class="d-flex" role="search" id="homeSearchForm" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if(q) window.location.href = 'admin/menu.aspx?search=' + encodeURIComponent(q);">
-                                        <input class="form-control rounded-pill" type="search" placeholder="Search food" />
-                                    </form>
-                                    <a class="nav-link position-relative" href="cart.aspx">
+                                    <div class="d-flex" role="search" id="homeSearchForm">
+                                        <input class="form-control rounded-pill" type="search" placeholder="Search food" onkeydown="if(event.key === 'Enter'){ event.preventDefault(); const q = this.value.trim(); if(q) window.location.href = 'admin/menu.aspx?search=' + encodeURIComponent(q); }" />
+                                    </div>
+                                    <a class="nav-link position-relative" href="AddToCart.aspx">
                                         <i class="fa-solid fa-shopping-cart fa-lg"></i>
                                         <span class="cart-badge">0</span>
                                     </a>
@@ -217,7 +217,6 @@
                                         <p class="card-text text-muted small">Cheesy, spicy, and packed with flavor.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="price-pill">$12.99</span>
-                                            <a href="food-details.html?id=1" class="btn btn-outline-orange btn-sm">View</a>
                                             <a href="admin/food-details.aspx?id=1" class="btn btn-orange btn-sm">Order</a>
                                         </div>
                                     </div>
@@ -232,7 +231,6 @@
                                         <p class="card-text text-muted small">Juicy burger with smoky flavor and crispy bites.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="price-pill">$8.49</span>
-                                            <a href="food-details.html?id=1" class="btn btn-outline-orange btn-sm">View</a>
                                             <a href="admin/food-details.aspx?id=2" class="btn btn-orange btn-sm">Order</a>
                                         </div>
                                     </div>
@@ -247,7 +245,6 @@
                                         <p class="card-text text-muted small">Aromatic rice dish to satisfy every craving.</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="price-pill">$10.99</span>
-                                            <a href="food-details.html?id=1" class="btn btn-outline-orange btn-sm">View</a>
                                             <a href="admin/food-details.aspx?id=3" class="btn btn-orange btn-sm">Order</a>
                                         </div>
                                     </div>
@@ -362,10 +359,10 @@
                                 <h5>Newsletter</h5>
                                 <div class="footer-newsletter">
                                     <p>Subscribe for new menu items, exclusive offers, and seasonal specials.</p>
-                                    <form class="d-flex flex-column gap-2" onsubmit="event.preventDefault(); showToast('Thanks for subscribing!');">
+                                    <div class="d-flex flex-column gap-2">
                                         <input type="email" class="form-control" placeholder="Your email address" required />
-                                        <button class="btn btn-orange w-100" type="submit"><i class="fa-solid fa-paper-plane me-2"></i>Subscribe</button>
-                                    </form>
+                                        <button class="btn btn-orange w-100" type="button" onclick="showToast('Thanks for subscribing!');"><i class="fa-solid fa-paper-plane me-2"></i>Subscribe</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

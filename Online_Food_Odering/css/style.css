@@ -694,3 +694,14 @@ textarea.form-control.is-valid {
   .navbar-nav { gap: 0.5rem; }
   .hero-image { min-height: 260px; }
 }
+
+#ContentPlaceHolder1_ImageButton1 {
+    width: 100% !important;
+    height: 64px !important;
+    object-fit: fill !important;
+    border: none !important;
+    border-radius: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+}
